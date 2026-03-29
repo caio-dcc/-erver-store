@@ -14,7 +14,9 @@ import { Modal } from '@mantine/core';
 import { MessageCircle } from 'lucide-react';
 
 
-export default function PedidosPage() {
+import { Suspense } from 'react';
+
+function PedidosContent() {
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
@@ -289,5 +291,13 @@ export default function PedidosPage() {
         )}
       </Modal>
     </Box>
+  );
+}
+
+export default function PedidosPage() {
+  return (
+    <Suspense fallback={<Box style={{ minHeight: '100vh' }}><Center h="60vh"><Loader color="rubyRed" size="xl" /></Center></Box>}>
+      <PedidosContent />
+    </Suspense>
   );
 }

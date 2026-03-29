@@ -236,9 +236,11 @@ export default function MinhaLojaPage() {
             <TextInput label="Tamanho" placeholder="P, M, G, GG" />
           </Group>
           <Textarea label="Descrição" minRows={3} />
-          <ParticleButton fullWidth mt="md" onClick={closeAdd}>
-            Criar Produto
-          </ParticleButton>
+          <Box mt="md">
+            <ParticleButton fullWidth onClick={closeAdd}>
+              Criar Produto
+            </ParticleButton>
+          </Box>
         </Stack>
       </Modal>
     </main>

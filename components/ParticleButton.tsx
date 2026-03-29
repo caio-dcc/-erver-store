@@ -10,9 +10,10 @@ interface ParticleButtonProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   variant?: string;
   type?: 'submit' | 'button' | 'reset';
+  mt?: string | number;
 }
 
-export const ParticleButton = ({ children, onClick, fullWidth, size = 'md', type = 'button' }: ParticleButtonProps) => {
+export const ParticleButton = ({ children, onClick, fullWidth, size = 'md', type = 'button', mt }: ParticleButtonProps) => {
   const sizeStyles = {
     xs: { padding: '4px 10px', fontSize: '10px' },
     sm: { padding: '8px 16px', fontSize: '12px' },
@@ -37,6 +38,7 @@ export const ParticleButton = ({ children, onClick, fullWidth, size = 'md', type
         justifyContent: 'center',
         width: fullWidth ? '100%' : 'auto',
         fontFamily: 'inherit',
+        marginTop: mt === 'xs' ? '4px' : mt === 'sm' ? '8px' : mt === 'md' ? '16px' : mt === 'lg' ? '24px' : mt === 'xl' ? '32px' : mt,
         ...sizeStyles[size]
       }}
     >
