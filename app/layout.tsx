@@ -52,11 +52,10 @@ export default function RootLayout({
       <head>
       </head>
       <body className={electrolize.variable}>
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1, opacity: 0.45 }}>
-          <Grainient />
-        </div>
-
         <MantineProvider theme={theme} defaultColorScheme="dark" forceColorScheme="dark">
+          <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1, opacity: 0.45 }}>
+            <Grainient />
+          </div>
           <Notifications position="top-right" zIndex={3000} />
           <CartProvider>
             <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
